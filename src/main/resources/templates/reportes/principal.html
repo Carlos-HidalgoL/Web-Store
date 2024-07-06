@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+    <head th:replace="~{layout/plantilla::head}"></head>
+    <body>
+        <header th:replace="~{layout/plantilla::header}"></header>
+
+        <div class="container mt-5">
+            <div class="row"> </div>
+            <div class="row row-cols-6">
+                <a th:href="@{/}" class="btn btn-primary">
+                    <i class="fas fa-arrow-left"></i> [[#{accion.regresar}]]
+                </a>
+            </div>
+
+            <div class="row mt-3">
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-header text-center">
+                            Reporte Usuarios
+                        </div>
+                        <div class="card-body">
+                            <a th:href="@{/reportes/usuarios?tipo=vPdf}" class="btn btn-primary">
+                                <i class="fas fa-eye"></i> <i class="fas fa-file-pdf"></i>
+                            </a>
+                            <a th:href="@{/reportes/usuarios?tipo=Pdf}" class="btn btn-success">
+                                <i class="fas fa-download"></i> <i class="fas fa-file-pdf"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-header text-center">
+                            Reporte Categorias
+                        </div>
+                        <div class="card-body">
+                            <a th:href="@{/reportes/categorias?tipo=vPdf}" class="btn btn-primary">
+                                <i class="fas fa-eye"></i> <i class="fas fa-file-pdf"></i>
+                            </a>
+                            <a th:href="@{/reportes/categorias?tipo=Pdf}" class="btn btn-success">
+                                <i class="fas fa-download"></i> <i class="fas fa-file-pdf"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-header text-center">
+                            Reporte Productos
+                        </div>
+                        <div class="card-body">
+                            <p>Este reporte solo mostrara productos con un precio minimo de 10000 y precio maximo de 25000</p>
+                            <a th:href="@{/reportes/productos?tipo=vPdf}" class="btn btn-primary">
+                                <i class="fas fa-eye"></i> <i class="fas fa-file-pdf"></i>
+                            </a>
+                            <a th:href="@{/reportes/productos?tipo=Pdf}" class="btn btn-success">
+                                <i class="fas fa-download"></i> <i class="fas fa-file-pdf"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <footer th:replace="~{layout/plantilla::footer}"></footer>
+
+    </body>
+</html>
